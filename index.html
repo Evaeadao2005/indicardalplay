@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programa de Indicação DALTV | Ganhe Prêmios por Indicação</title>
-    <meta name="description" content="Indique amigos para a DALTV e ganhe R$10 ou 1 mês grátis por cada assinatura.">
-    <meta name="keywords" content="TV, indicação, ganhe dinheiro, programa afiliados, DALTV, PIX, mês grátis">
-    <meta name="author" content="DALTV">
+    <title>Programa de Indicação DALPLAY | Ganhe Prêmios por Indicação</title>
+    <meta name="description" content="Indique amigos para a DALPLAY e ganhe 1 mês grátis por cada assinatura.">
+    <meta name="keywords" content="TV, indicação, ganhe dinheiro, programa afiliados, DALPLAY, mês grátis">
+    <meta name="author" content="DALPLAY">
     
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.daltv.site/">
-    <meta property="og:title" content="Programa de Indicação DALTV | Ganhe Prêmios por Indicação">
-    <meta property="og:description" content="Indique amigos para a DALTV e ganhe R$10 ou 1 mês grátis por cada assinatura.">
+    <meta property="og:url" content="https://www.DALPLAY.site/">
+    <meta property="og:title" content="Programa de Indicação DALPLAY | Ganhe Prêmios por Indicação">
+    <meta property="og:description" content="Indique amigos para a DALPLAY e ganhe 1 mês grátis por cada assinatura.">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <link rel="icon" href="https://daltv.site/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     
     <style>
     :root {
@@ -482,9 +482,9 @@
     <section class="hero">
         <div class="hero-content">
             <div class="logo-container">
-                <img src="https://daltv.site/logo.png" alt="DALTV" class="logo">
+                <img src="/logo.png" alt="DALPLAY" class="logo">
             </div>
-            <h1>Ganhe R$10 ou 1 Mês Grátis por Indicação!</h1>
+            <h1>Ganhe 1 Mês Grátis por Indicação!</h1>
             <p>Indique amigos para a melhor TV do Brasil e escolha sua recompensa: PIX ou 1 mês de acesso grátis!</p>
             
             <div class="hero-buttons">
@@ -503,8 +503,8 @@
             <div class="benefits-grid">
                 <div class="benefit-card">
                     <div class="benefit-icon"><i class="fas fa-money-bill-wave"></i></div>
-                    <h3>Sua Escolha, Seu Prêmio</h3>
-                    <p>Escolha entre R$10 no PIX ou 1 mês de acesso grátis por cada amigo que assinar.</p>
+                    <h3>Sua Indicação, Seu Prêmio</h3>
+                    <p>Ganhe 1 mês de acesso grátis por cada amigo que assinar.</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon"><i class="fas fa-chart-line"></i></div>
@@ -608,7 +608,7 @@
     </div>
 
     <div class="simple-footer">
-        © 2025 DALTV. Todos os direitos reservados.
+        © 2026 DALPLAY. Todos os direitos reservados.
     </div>
 
     <div id="social-proof-popup" class="popup-hidden">
@@ -717,7 +717,7 @@
         const ref = urlParams.get('ref');
         
         if (ref) {
-            const mensagem = `Olá DALTV, tenho interesse em testar e assinar.\n\nFui indicado(a) por: ${ref}`;
+            const mensagem = `Olá DALPLAY, tenho interesse em testar e assinar.\n\nFui indicado(a) por: ${ref}`;
             resolveAvailableNumber(ref).then((zapNumber) => {
                 if (!zapNumber) return;
                 window.location.href = `https://wa.me/${zapNumber}?text=${encodeURIComponent(mensagem)}`;
@@ -731,7 +731,7 @@
         const nomeInput = document.getElementById('nome');
         
         const whatsapp = whatsappInput.value.trim();
-        const nome = nomeInput.value.trim() || 'Cliente DALTV';
+        const nome = nomeInput.value.trim() || 'Cliente DALPLAY';
         
         if (!whatsapp) {
             alert('Por favor, informe seu número de WhatsApp');
@@ -746,7 +746,7 @@
         document.getElementById('link-indicacao').textContent = linkIndicacao;
         document.getElementById('result').style.display = 'block';
         
-        const mensagemCompartilhamento = `${nome} te indicou a DALTV!\n\n🔥 Clique no link para conhecer o melhor conteúdo:\n${linkIndicacao}\n\n💰 Você também pode ganhar R$10 ou 1 mês grátis a cada amigo que indicar!`;
+        const mensagemCompartilhamento = `${nome} te indicou a DALPLAY!\n\n🔥 Clique no link para conhecer o melhor conteúdo:\n${linkIndicacao}\n\n💰 Você também pode ganhar R$10 ou 1 mês grátis a cada amigo que indicar!`;
         
         document.getElementById('whatsapp-share').href = `https://wa.me/?text=${encodeURIComponent(mensagemCompartilhamento)}`;
         document.getElementById('facebook-share').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(linkIndicacao)}`;
@@ -837,7 +837,7 @@
         document.getElementById('btnRevenda').addEventListener('click', function() {
             resolveAvailableNumber().then((zapNumber) => {
                 if (!zapNumber) return;
-                window.open(`https://wa.me/${zapNumber}?text=Quero%20ser%20revendedor%20DALTV`);
+                window.open(`https://wa.me/${zapNumber}?text=Quero%20ser%20revendedor%20DALPLAY`);
             });
         });
         
