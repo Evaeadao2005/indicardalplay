@@ -1,37 +1,21 @@
 const ZAP_CONTROL = {
   fallbackOrder: [
-    'ZAP01','ZAP02','ZAP03','ZAP04','ZAP05','ZAP06','ZAP07','ZAP08','ZAP09'
+    'ZAP00','ZAP01'
   ],
   zaps: {
-    ZAP00: { number: '558893509111', active: false },
-    ZAP01: { number: '558894635325', active: false },
-    ZAP02: { number: '558894492159', active: false },
-    ZAP03: { number: '558892532304', active: true },
-    ZAP04: { number: '558892063359', active: false },
-    ZAP05: { number: '558894959133', active: true },
-    ZAP06: { number: '558894963227', active: true },
-    ZAP07: { number: '558894968232', active: true },
-    ZAP08: { number: '558894976237', active: true },
-    ZAP09: { number: '558894927965', active: true }
+    ZAP00: { number: '555381043232', active: true },
+    ZAP01: { number: '555381038762', active: true }
   }
 };
 
 const FALLBACK_ZAP_MAP = {
-  ZAP00: '558893509111',
-  ZAP01: '558894635325',
-  ZAP02: '558894492159',
-  ZAP03: '558892532304',
-  ZAP04: '558892063359',
-  ZAP05: '558894959133',
-  ZAP06: '558894963227',
-  ZAP07: '558894968232',
-  ZAP08: '558894976237',
-  ZAP09: '558894927965'
+  ZAP00: '555381043232',
+  ZAP01: '555381038762'
 };
 
 // ✅ Ajuste aqui os domínios permitidos
 const ALLOWED_ORIGINS = new Set([
-  'https://indicar.daltv.site',
+  'https://indicardalplay.dlmn.site',
   // opcional para desenvolvimento:
   'http://localhost:3000',
   'http://localhost:5173'
