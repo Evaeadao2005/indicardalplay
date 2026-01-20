@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa de Indicação DALTV | Ganhe Prêmios por Indicação</title>
+    <meta name="description" content="Indique amigos para a DALTV e ganhe R$10 ou 1 mês grátis por cada assinatura.">
+    <meta name="keywords" content="TV, indicação, ganhe dinheiro, programa afiliados, DALTV, PIX, mês grátis">
+    <meta name="author" content="DALTV">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.daltv.site/">
+    <meta property="og:title" content="Programa de Indicação DALTV | Ganhe Prêmios por Indicação">
+    <meta property="og:description" content="Indique amigos para a DALTV e ganhe R$10 ou 1 mês grátis por cada assinatura.">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="icon" href="https://daltv.site/favicon.ico" type="image/x-icon">
+    
+    <style>
+    :root {
+        --vermelho: #E50914;
+        --vermelho-escuro: #B20710;
+        --preto: #0A0A0A;
+        --cinza-escuro: #1E1E1E;
+        --cinza: #2D2D2D;
+        --branco: #FFFFFF;
+        --dourado: #FFD700;
+        --verde: #25D366;
+        --azul-facebook: #1877F2;
+        --roxo-instagram: #E1306C;
+        --azul-telegram: #0088CC;
+        --sombra-padrao: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --transicao-padrao: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    body {
+        font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+        background-color: var(--preto);
+        color: var(--branco);
+        line-height: 1.6;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-size: calc(16px + 0.3vw);
+    }
+    
+    /* ============ HERO SECTION ============ */
+    .hero {
+        background: linear-gradient(152deg, rgba(10,10,10,0.95) 30%, rgba(180,10,20,0.85) 120%);
+        padding: 2rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        min-height: 80vh;
+    }
+        
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .logo-container {
+        margin-bottom: 2rem;
+    }
+    
+    .logo {
+        width: min(280px, 70vw);
+        height: auto;
+        filter: drop-shadow(0 0 20px rgba(229, 9, 20, 0.5));
+        transition: transform 0.5s ease, filter 0.5s ease;
+    }
+    
+    .logo:hover {
+        transform: scale(1.05);
+        filter: drop-shadow(0 0 25px rgba(229, 9, 20, 0.7));
+    }
+    
+    .hero-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 2.5rem;
+        width: 100%;
+    }
+    
+    .hero-btn {
+        flex: 1;
+        min-width: 220px;
+        padding: 1.2rem 2rem;
+        font-size: 1.1rem;
+        border-radius: 0.5rem;
+        text-align: center;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        user-select: none;
+        text-decoration: none;
+    }
+    
+    .btn-indicar {
+        background: linear-gradient(135deg, var(--vermelho), var(--vermelho-escuro));
+        color: white;
+        box-shadow: 0 5px 15px rgba(229, 9, 20, 0.4);
+        border: none;
+    }
+
+    .btn-revender {
+        background: linear-gradient(135deg, var(--dourado), #d4af37);
+        color: #000;
+        box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+    }
+    
+    .hero-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    }
+    
+    /* ============ MAIN CONTAINER ============ */
+    .container {
+        width: 95%;
+        max-width: 1200px;
+        margin: -2rem auto 3rem;
+        background-color: var(--cinza-escuro);
+        border-radius: 1rem;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        overflow: hidden;
+        position: relative;
+        z-index: 10;
+        border: 1px solid rgba(229, 9, 20, 0.3);
+    }
+    
+    .content {
+        padding: 2.5rem;
+    }
+    
+    /* ============ BENEFITS GRID ============ */
+    .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+    }
+    
+    .benefit-card {
+        background: linear-gradient(145deg, #252525, #1E1E1E);
+        padding: 1.8rem;
+        border-radius: 0.8rem;
+        border-left: 0.3rem solid var(--vermelho);
+        transition: var(--transicao-padrao);
+        box-shadow: var(--sombra-padrao);
+    }
+    
+    .benefit-card:hover {
+        transform: translateY(-0.5rem);
+        box-shadow: 0 15px 30px rgba(229, 9, 20, 0.3);
+    }
+    
+    .benefit-icon {
+        font-size: 2.5rem;
+        color: var(--vermelho);
+        margin-bottom: 1rem;
+    }
+    
+    /* ============ FORM STYLES ============ */
+    .form-container {
+        background: linear-gradient(145deg, #1A1A1A, #222222);
+        padding: 2rem;
+        border-radius: 0.8rem;
+        margin-top: 2.5rem;
+        border: 1px solid var(--vermelho);
+        box-shadow: 0 10px 25px rgba(229, 9, 20, 0.2);
+    }
+    
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+    
+    label {
+        display: block;
+        margin-bottom: 0.8rem;
+        font-weight: 600;
+        color: var(--branco);
+    }
+    
+    input {
+        width: 100%;
+        padding: 1rem 1.2rem;
+        background-color: #333;
+        border: none;
+        border-radius: 0.5rem;
+        color: var(--branco);
+        font-size: 1rem;
+        transition: var(--transicao-padrao);
+        border: 1px solid #444;
+    }
+    
+    input:focus {
+        outline: none;
+        border-color: var(--vermelho);
+        box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.3);
+    }
+    
+    /* ============ RESULT SECTION ============ */
+    .result {
+        margin-top: 2rem;
+        padding: 1.8rem;
+        background: linear-gradient(145deg, #1A1A1A, #222222);
+        border-radius: 0.8rem;
+        border: 2px dashed var(--vermelho);
+        text-align: center;
+        display: none;
+    }
+    
+    .link-container {
+        background: rgba(0,0,0,0.3);
+        padding: 1rem;
+        border-radius: 0.5rem;
+        margin: 1.5rem 0;
+        border: 1px solid rgba(229,9,20,0.3);
+        word-break: break-all;
+        position: relative;
+        font-family: monospace;
+        color: var(--vermelho);
+    }
+    
+    .copy-btn {
+        position: absolute;
+        right: 0.5rem;
+        top: 0.5rem;
+        background: rgba(229,9,20,0.3);
+        border: none;
+        color: white;
+        padding: 0.3rem 0.6rem;
+        border-radius: 0.3rem;
+        cursor: pointer;
+        transition: var(--transicao-padrao);
+    }
+    
+    .copy-btn:hover {
+        background: var(--vermelho);
+    }
+    
+    /* ============ SHARE BUTTONS ============ */
+    .share-buttons {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+    
+    .share-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
+        padding: 0.8rem 1.2rem;
+        border-radius: 0.5rem;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        transition: var(--transicao-padrao);
+    }
+    
+    .whatsapp { background: linear-gradient(135deg, var(--verde), #128C7E); }
+    .facebook { background: linear-gradient(135deg, var(--azul-facebook), #2d4373); }
+    .telegram { background: linear-gradient(135deg, var(--azul-telegram), #005f8b); }
+    .instagram { background: linear-gradient(135deg, var(--roxo-instagram), #C13584); }
+    
+    .share-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    /* ============ REVENDA SECTION ============ */
+    .revenda-section {
+        margin: 3rem 0;
+        padding: 2rem;
+        background: linear-gradient(145deg, #1A1A1A, #252525);
+        border-radius: 1rem;
+        border-left: 0.3rem solid var(--dourado);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    
+    .revenda-columns {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .revenda-card {
+        background: rgba(0,0,0,0.3);
+        padding: 1.5rem;
+        border-radius: 0.8rem;
+        border: 1px solid rgba(255,215,0,0.3);
+    }
+    
+    .revenda-card ul {
+        padding-left: 1.5rem;
+    }
+    
+    .revenda-card li {
+        margin-bottom: 0.8rem;
+        list-style-type: none;
+        position: relative;
+    }
+    
+    .revenda-card li::before {
+        content: '•';
+        color: var(--dourado);
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+    }
+    
+    .revenda-highlight {
+        background: rgba(255,215,0,0.08);
+        padding: 1.5rem;
+        border-radius: 0.8rem;
+        margin-bottom: 1.5rem;
+        border: 1px dashed var(--dourado);
+    }
+    
+    .revenda-btn {
+        background: linear-gradient(135deg, var(--dourado), #d4af37);
+        color: #000;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 0.5rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: var(--transicao-padrao);
+        max-width: 400px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.8rem;
+    }
+    
+    .revenda-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 15px rgba(212, 175, 55, 0.4);
+    }
+        
+    /* ============ FOOTER ============ */
+    .simple-footer {
+        background: #000;
+        padding: 1.5rem;
+        text-align: center;
+        font-size: 0.9rem;
+        color: #777;
+        border-top: 1px solid rgba(229, 9, 20, 0.2);
+    }
+    
+    /* ============ SOCIAL PROOF POPUP (NOVO) ============ */
+    #social-proof-popup {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        background-color: var(--cinza-escuro);
+        border-radius: 0.7rem;
+        padding: 1rem 1.2rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        z-index: 1000;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+        border: 1px solid rgba(229, 9, 20, 0.4);
+        transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .popup-icon {
+        color: var(--vermelho);
+        font-size: 1.8rem;
+    }
+
+    .popup-text p {
+        margin: 0;
+        line-height: 1.3;
+    }
+
+    .popup-line1 {
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: var(--branco);
+    }
+
+    .popup-line2 {
+        font-size: 0.8rem;
+        color: #aaa;
+    }
+
+    .popup-hidden {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(20px);
+    }
+
+    .popup-visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    
+    /* ============ RESPONSIVE ADJUSTMENTS ============ */
+    @media (max-width: 768px) {
+        .hero {
+            min-height: auto;
+            padding: 2rem 1rem;
+        }
+        
+        .container {
+            margin: -1rem auto 2rem;
+        }
+        
+        .content {
+            padding: 1.5rem;
+        }
+        
+        .hero-btn {
+            padding: 1rem;
+            font-size: 1rem;
+        }
+
+        #social-proof-popup {
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 2rem);
+            bottom: 1rem;
+        }
+        
+        .popup-hidden {
+            transform: translateX(-50%) translateY(20px);
+        }
+    
+        .popup-visible {
+            transform: translateX(-50%) translateY(0);
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .hero-buttons {
+            flex-direction: column;
+        }
+        
+        .hero-btn {
+            width: 100%;
+        }
+        
+        .benefits-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <div class="logo-container">
+                <img src="https://daltv.site/logo.png" alt="DALTV" class="logo">
+            </div>
+            <h1>Ganhe R$10 ou 1 Mês Grátis por Indicação!</h1>
+            <p>Indique amigos para a melhor TV do Brasil e escolha sua recompensa: PIX ou 1 mês de acesso grátis!</p>
+            
+            <div class="hero-buttons">
+                <button class="hero-btn btn-indicar" id="btnIndicar">
+                    <i class="fas fa-hand-holding-usd"></i> QUERO INDICAR
+                </button>
+                <a href="#revenda" class="hero-btn btn-revender">
+                    <i class="fas fa-crown"></i> QUERO REVENDER
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <div class="container">
+        <div class="content">
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-money-bill-wave"></i></div>
+                    <h3>Sua Escolha, Seu Prêmio</h3>
+                    <p>Escolha entre R$10 no PIX ou 1 mês de acesso grátis por cada amigo que assinar.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Sem Limites</h3>
+                    <p>Indique quantos amigos quiser e multiplique seus ganhos.</p>
+                </div>
+            </div>
+            
+            <div class="form-container">
+                <div id="form-content">
+                    <h2>Crie Seu Link de Indicação</h2>
+                    <p>Preencha seus dados abaixo e gere seu link personalizado para começar a ganhar!</p>
+                    
+                    <div class="form-group">
+                        <label for="whatsapp">Seu WhatsApp (com DDD):</label>
+                        <input type="tel" id="whatsapp" placeholder="Ex: 11987654321" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="nome">Seu Nome (como quer ser identificado):</label>
+                        <input type="text" id="nome" placeholder="Ex: João da Silva">
+                    </div>
+                    
+                    <button class="hero-btn btn-indicar" id="btnGerarLink">
+                        <i class="fas fa-link"></i> GERAR MEU LINK
+                    </button>
+                </div>
+                
+                <div id="result" class="result">
+                    <div class="result-content">
+                        <h3>Seu Link Exclusivo Está Pronto!</h3>
+                        <p>Compartilhe este link com seus amigos e comece a ganhar!</p>
+                        
+                        <div class="link-container">
+                            <span id="link-indicacao"></span>
+                            <button class="copy-btn" id="btnCopySmall">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        
+                        <button class="hero-btn btn-indicar" id="btnCopyLarge">
+                            <i class="fas fa-copy"></i> COPIAR LINK
+                        </button>
+                        
+                        <h3 style="margin-top: 2rem;">Compartilhe Agora:</h3>
+                        <div class="share-buttons">
+                            <a href="#" id="whatsapp-share" class="share-btn whatsapp" target="_blank">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                            <a href="#" id="facebook-share" class="share-btn facebook" target="_blank">
+                                <i class="fab fa-facebook-f"></i> Facebook
+                            </a>
+                            <a href="#" id="instagram-share" class="share-btn instagram" target="_blank">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                            <a href="#" id="telegram-share" class="share-btn telegram" target="_blank">
+                                <i class="fab fa-telegram"></i> Telegram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="revenda" class="revenda-section">
+                <h2><i class="fas fa-crown"></i> OPORTUNIDADE DE REVENDA</h2>
+                
+                <div class="revenda-columns">
+                    <div class="revenda-card">
+                        <h3><i class="fas fa-coins"></i> Investimento Inicial</h3>
+                        <ul>
+                            <li>Apenas <strong>R$50</strong> para começar</li>
+                            <li>Receba <strong>10 ativações</strong> para revender</li>
+                            <li>Sem taxas ou mensalidades</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="revenda-card">
+                        <h3><i class="fas fa-chart-line"></i> Seu Potencial</h3>
+                        <ul>
+                            <li>Venda cada ativação por <strong>R$25</strong></li>
+                            <li>Transforme <strong>R$50 em R$250</strong></li>
+                            <li><strong>Lucro de R$200</strong> no primeiro lote</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="revenda-highlight">
+                    <h3><i class="fas fa-sync-alt"></i> Ganhos Recorrentes</h3>
+                    <p>Além do lucro inicial, você ganha <strong>comissão em todas as renovações</strong> dos seus clientes!</p>
+                    <p>Quanto mais você vende, mais sua renda mensal cresce.</p>
+                </div>
+                
+                <div style="text-align: center;">
+                    <button class="revenda-btn" id="btnRevenda">
+                        <i class="fas fa-paper-plane"></i> QUERO SER REVENDEDOR
+                    </button>
+                    <p style="margin-top: 1rem; font-size: 0.85rem; color: #aaa;">Vagas limitadas! Garanta sua posição hoje mesmo.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="simple-footer">
+        © 2025 DALTV. Todos os direitos reservados.
+    </div>
+
+    <div id="social-proof-popup" class="popup-hidden">
+        <div class="popup-icon">
+            <i class="fas fa-gift"></i>
+        </div>
+        <div class="popup-text">
+            <p class="popup-line1"></p>
+            <p class="popup-line2"></p>
+        </div>
+    </div>
+
+
+    <script>
+    const ZAP_CONTROL_URLS = [
+        new URL('/netlify/functions/zap-control.js', window.location.origin).toString()
+    ];
+
+    function parseZapControl(scriptText) {
+        if (!scriptText) return null;
+        const match = scriptText.match(/const\s+ZAP_CONTROL\s*=\s*({[\s\S]*?});/);
+        if (!match) return null;
+        try {
+            return Function(`"use strict"; return (${match[1]});`)();
+        } catch (error) {
+            return null;
+        }
+    }
+
+    async function fetchZapControl() {
+        for (const url of ZAP_CONTROL_URLS) {
+            try {
+                const response = await fetch(url, { cache: 'no-store' });
+                if (!response.ok) continue;
+                const text = await response.text();
+                const parsed = parseZapControl(text);
+                if (parsed) return parsed;
+            } catch (error) {
+                continue;
+            }
+        }
+        return null;
+    }
+
+    function normalizeDigits(value) {
+        return (value || '').replace(/\D/g, '');
+    }
+
+    function getBannedNumbers(control) {
+        if (!control || !control.zaps) return new Set();
+        const bannedNumbers = new Set();
+        Object.keys(control.zaps).forEach((zapId) => {
+            const zap = control.zaps[zapId];
+            if (!zap || !zap.number) return;
+            if (zap.active === false || zap.banned === true) {
+                bannedNumbers.add(zap.number);
+            }
+        });
+        return bannedNumbers;
+    }
+
+    function getSelectableNumbers(control) {
+        if (!control || !control.zaps) return [];
+        const bannedNumbers = getBannedNumbers(control);
+        return Object.keys(control.zaps)
+            .map((zapId) => control.zaps[zapId])
+            .filter((zap) => zap && zap.number)
+            .filter((zap) => zap.active !== false && zap.banned !== true)
+            .filter((zap) => !bannedNumbers.has(zap.number))
+            .map((zap) => zap.number);
+    }
+
+    function findRequestedNumber(control, requestedValue) {
+        if (!control || !control.zaps) return null;
+        const target = normalizeDigits(requestedValue);
+        if (!target) return null;
+        const bannedNumbers = getBannedNumbers(control);
+        const match = Object.keys(control.zaps)
+            .map((zapId) => control.zaps[zapId])
+            .find((zap) => zap
+                && normalizeDigits(zap.number) === target
+                && zap.active !== false
+                && zap.banned !== true
+                && !bannedNumbers.has(zap.number));
+        return match ? match.number : null;
+    }
+
+    function getRandomFromList(list) {
+        if (!list || list.length === 0) return null;
+        const index = Math.floor(Math.random() * list.length);
+        return list[index];
+    }
+
+    async function resolveAvailableNumber(requestedValue) {
+        const control = await fetchZapControl();
+        const requested = findRequestedNumber(control, requestedValue);
+        if (requested) return requested;
+        const candidates = getSelectableNumbers(control);
+        const random = getRandomFromList(candidates);
+        return random || null;
+    }
+
+    // Verificar referência ao carregar a página
+    function checkReferral() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const ref = urlParams.get('ref');
+        
+        if (ref) {
+            const mensagem = `Olá DALTV, tenho interesse em testar e assinar.\n\nFui indicado(a) por: ${ref}`;
+            resolveAvailableNumber(ref).then((zapNumber) => {
+                if (!zapNumber) return;
+                window.location.href = `https://wa.me/${zapNumber}?text=${encodeURIComponent(mensagem)}`;
+            });
+        }
+    }
+
+    // Gerar link de indicação
+    function gerarLink() {
+        const whatsappInput = document.getElementById('whatsapp');
+        const nomeInput = document.getElementById('nome');
+        
+        const whatsapp = whatsappInput.value.trim();
+        const nome = nomeInput.value.trim() || 'Cliente DALTV';
+        
+        if (!whatsapp) {
+            alert('Por favor, informe seu número de WhatsApp');
+            whatsappInput.focus();
+            return;
+        }
+        
+        const numeroLimpo = whatsapp.replace(/\D/g, '');
+        const linkIndicacao = `${window.location.origin}${window.location.pathname}?ref=${numeroLimpo}`;
+        
+        document.getElementById('form-content').style.display = 'none';
+        document.getElementById('link-indicacao').textContent = linkIndicacao;
+        document.getElementById('result').style.display = 'block';
+        
+        const mensagemCompartilhamento = `${nome} te indicou a DALTV!\n\n🔥 Clique no link para conhecer o melhor conteúdo:\n${linkIndicacao}\n\n💰 Você também pode ganhar R$10 ou 1 mês grátis a cada amigo que indicar!`;
+        
+        document.getElementById('whatsapp-share').href = `https://wa.me/?text=${encodeURIComponent(mensagemCompartilhamento)}`;
+        document.getElementById('facebook-share').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(linkIndicacao)}`;
+        document.getElementById('telegram-share').href = `https://t.me/share/url?url=${encodeURIComponent(linkIndicacao)}&text=${encodeURIComponent(mensagemCompartilhamento)}`;
+        document.getElementById('instagram-share').href = `https://www.instagram.com/?url=${encodeURIComponent(linkIndicacao)}`;
+        
+        document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Copiar link para área de transferência
+    function copiarLink() {
+        const link = document.getElementById('link-indicacao').textContent;
+        
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(link).then(() => {
+                alert('Link copiado! Agora é só compartilhar e começar a ganhar!');
+            }).catch(err => {
+                fallbackCopy(link);
+            });
+        } else {
+            fallbackCopy(link);
+        }
+        
+        function fallbackCopy(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            alert('Link copiado!');
+        }
+    }
+
+    // LÓGICA DO POPUP DE PROVA SOCIAL (NOVO)
+    function socialProof() {
+        const names = ["Ana S.", "Carlos M.", "Juliana P.", "Rafael C.", "Fernanda L.", "Lucas G.", "Beatriz A.", "Ricardo T."];
+        const locations = ["Juazeiro do Norte, CE", "Fortaleza, CE", "São Paulo, SP", "Crato, CE", "Recife, PE", "Rio de Janeiro, RJ", "Barbalha, CE", "Salvador, BA"];
+        const rewards = ["ganhou R$10 via PIX!", "acabou de ganhar 1 mês grátis!"];
+
+        const popup = document.getElementById('social-proof-popup');
+        const line1 = popup.querySelector('.popup-line1');
+        const line2 = popup.querySelector('.popup-line2');
+
+        function showPopup() {
+            const randomName = names[Math.floor(Math.random() * names.length)];
+            const randomLocation = locations[Math.floor(Math.random() * locations.length)];
+            const randomReward = rewards[Math.floor(Math.random() * rewards.length)];
+
+            line1.textContent = `${randomName} de ${randomLocation}`;
+            line2.textContent = randomReward;
+
+            popup.classList.add('popup-visible');
+            popup.classList.remove('popup-hidden');
+
+            setTimeout(() => {
+                popup.classList.add('popup-hidden');
+                popup.classList.remove('popup-visible');
+            }, 5000);
+        }
+
+        function startLoop() {
+            const randomInterval = Math.random() * (9000 - 4000) + 4000; 
+            setTimeout(() => {
+                showPopup();
+                startLoop();
+            }, randomInterval);
+        }
+
+        setTimeout(startLoop, 4000);
+    }
+
+    // Inicialização
+    document.addEventListener('DOMContentLoaded', function() {
+        checkReferral();
+        socialProof(); // Inicia a função de prova social
+        
+        // Event listeners
+        document.getElementById('btnIndicar').addEventListener('click', function() {
+            document.querySelector('.form-container').scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('whatsapp').focus();
+        });
+        
+        document.getElementById('btnGerarLink').addEventListener('click', gerarLink);
+        document.getElementById('btnCopySmall').addEventListener('click', copiarLink);
+        document.getElementById('btnCopyLarge').addEventListener('click', copiarLink);
+
+        document.getElementById('btnRevenda').addEventListener('click', function() {
+            resolveAvailableNumber().then((zapNumber) => {
+                if (!zapNumber) return;
+                window.open(`https://wa.me/${zapNumber}?text=Quero%20ser%20revendedor%20DALTV`);
+            });
+        });
+        
+    });
+    </script>
+</body>
+</html>
